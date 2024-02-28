@@ -5,7 +5,6 @@ import TextField from '@mui/material/TextField';
 
 interface University {
   name: string;
-  // Add other properties based on your data model
 }
 
 const ComboBox: React.FC = () => {

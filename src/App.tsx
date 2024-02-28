@@ -7,12 +7,10 @@ import ComboBox from './components/ComboBox';
 import Button from '@mui/material/Button';
 
 const handleInputChange = (value: string) => {
-  // Handle the input change logic here
   console.log(value);
 };
 
 const handleButtonClick = () => {
-  // Handle the button click logic here
   console.log('Button clicked!');
 };
 
@@ -33,8 +31,6 @@ export default function App() {
           Univerzita na kterou chodíte
         </Typography>
         <Box sx={{ mb: 2 }}>
-          {' '}
-          {/* Add margin-bottom for spacing */}
           <ComboBox />
         </Box>
 
