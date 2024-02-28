@@ -7,7 +7,15 @@ interface University {
   name: string;
 }
 
-const ComboBox: React.FC = () => {
+interface ComboBoxProps {
+  selectedUniversity: University | null;
+  onUniversityChange: (university: University | null) => void;
+}
+
+const ComboBox: React.FC<ComboBoxProps> = ({
+  selectedUniversity,
+  onUniversityChange,
+}) => {
   const [inputValue, setInputValue] = useState<string>('');
   const {
     data: universities,
@@ -19,13 +27,22 @@ const ComboBox: React.FC = () => {
     setInputValue(event.target.value);
   };
 
+  const handleUniversityChange = (
+    event: React.ChangeEvent<{}>,
+    value: University | null
+  ) => {
+    onUniversityChange(value);
+  };
+
   return (
     <div>
       <Autocomplete
+        value={selectedUniversity}
         options={(universities as University[]) || []}
         getOptionLabel={(option) => option.name}
         loading={isLoading}
         noOptionsText="No universities found"
+        onChange={handleUniversityChange}
         renderInput={(params) => (
           <TextField
             {...params}
