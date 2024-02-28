@@ -29,7 +29,7 @@ const TextInput: React.FC<TextInputProps> = ({
         onChange={handleChange}
         disabled={disabled}
         style={{
-          width: '100%',
+          width: '300px',
           padding: '10px',
           borderRadius: '5px',
           border: error ? '1px solid red' : '1px solid black',
